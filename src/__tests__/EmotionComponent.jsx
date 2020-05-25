@@ -5,7 +5,7 @@ import EmotionComponent from '../EmotionComponent'
 
 expect.addSnapshotSerializer(serializer)
 
-test('mutating test 1', () => {
+test.skip('mutating test 1', () => {
   render(<EmotionComponent variant="bold" />)
 })
 
