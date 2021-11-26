@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 
 const StyledTypography = styled.p`
@@ -14,7 +13,7 @@ const StyledTypography = styled.p`
 // 3 different ways to use Emotion CSS-in-JS
 const EmotionComponent = ({ variant }) => {
   return (
-    <StyledTypography variant={variant} >Some Text</StyledTypography>
+    <StyledTypography variant={variant}>Some Text {variant}</StyledTypography>
   )
 }
 

@@ -1,27 +1,21 @@
 import { render } from "@testing-library/react";
 import { createSerializer } from "@emotion/jest";
 import EmotionComponent from "../EmotionComponent";
+import ParentEmotionComponent from "../ParentEmotionComponent";
 
 expect.addSnapshotSerializer(createSerializer());
 
-test("mutating test 1", () => {
-  render(<EmotionComponent variant="bold" />);
-});
-
-test("mutating test 2", () => {
-  render(<EmotionComponent variant="italic" />);
-});
-
-test("renders a snapshot of the 2 variants with css", () => {
+test("renders a snapshot of the parent", () => {
   const { container } = render(
     <>
       <EmotionComponent variant="bold" />
-      <EmotionComponent variant="italic" />
+      <ParentEmotionComponent variant="italic" />
     </>
   );
 
-  // console.log(document.documentElement.innerHTML);
+  console.log(document.documentElement.innerHTML);
 
+  // On the ParentEmotionComponent is missing the styles defined there
   expect(container).toMatchInlineSnapshot(`
     .emotion-0 {
       padding: 0;
