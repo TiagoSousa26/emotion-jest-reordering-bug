@@ -7,6 +7,15 @@ const StyledEmotionComponent = styled(EmotionComponent)`
   display: flex;
   
   ${props => props.variant === 'italic' && `font-weight: italic`};
+  
+  :hover {
+    background-color: darkgreen;
+  }
+
+  @media (min-width: 48em) {
+    font-size: 12px;
+    background: darkred;
+  }
 `;
 
 const ParentEmotionComponent = ({ variant }) => {

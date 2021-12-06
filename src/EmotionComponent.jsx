@@ -8,12 +8,25 @@ const StyledTypography = styled.p`
   background-color: hotpink;
 
   ${props => props.variant === 'bold' && `font-weight: bold`};
+  
+  :first-of-type {
+    font-weight: bold;
+  }
+
+  :hover {
+    background-color: green;
+  }
+
+  @media (min-width: 48em) {
+    font-size: 12px;
+    background: purple;
+  }
 `
 
 // 3 different ways to use Emotion CSS-in-JS
-const EmotionComponent = ({ variant }) => {
+const EmotionComponent = ({ variant, className }) => {
   return (
-    <StyledTypography variant={variant}>Some Text {variant}</StyledTypography>
+    <StyledTypography className={className} variant={variant}>Some Text {variant}</StyledTypography>
   )
 }
 
